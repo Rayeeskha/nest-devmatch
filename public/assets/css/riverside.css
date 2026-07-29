@@ -1,0 +1,698 @@
+:root {
+  --rr-navy: #10263d;
+  --rr-navy-2: #173652;
+  --rr-gold: #c89a45;
+  --rr-gold-2: #e2bd72;
+  --rr-ink: #1f2933;
+  --rr-muted: #617082;
+  --rr-line: #e5e7eb;
+  --rr-bg: #f7f8f6;
+  --rr-white: #ffffff;
+  --rr-shadow: 0 18px 50px rgba(16, 38, 61, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--rr-ink);
+  background: var(--rr-bg);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: var(--rr-gold);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.rr-topbar {
+  background: var(--rr-navy);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 13px;
+  padding: 8px 0;
+}
+
+.rr-topbar a {
+  color: #ffffff;
+}
+
+.rr-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid rgba(16, 38, 61, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.rr-logo {
+  width: 148px;
+  height: auto;
+}
+
+.rr-header .rr-logo {
+  width: 124px;
+  max-height: 58px;
+  object-fit: contain;
+}
+
+.rr-footer .rr-logo {
+  width: 190px;
+  max-height: none;
+}
+
+.rr-logo-mark {
+  width: 98px;
+  height: auto;
+}
+
+.navbar {
+  padding: 12px 0;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: var(--rr-navy);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link:hover {
+  color: var(--rr-gold);
+}
+
+.rr-btn,
+.rr-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: 800;
+  line-height: 1;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.rr-btn {
+  border: 1px solid var(--rr-gold);
+  color: #111827;
+  background: linear-gradient(135deg, var(--rr-gold), var(--rr-gold-2));
+  box-shadow: 0 10px 24px rgba(200, 154, 69, 0.25);
+}
+
+.rr-btn:hover {
+  color: #111827;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(200, 154, 69, 0.32);
+}
+
+.rr-btn-outline {
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.rr-btn-outline:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.rr-section {
+  padding: 86px 0;
+}
+
+.rr-section-soft {
+  background: #ffffff;
+}
+
+.rr-kicker {
+  color: var(--rr-gold);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.rr-title {
+  color: var(--rr-navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 4vw, 54px);
+  line-height: 1.05;
+  margin: 10px 0 18px;
+}
+
+.rr-lead {
+  color: var(--rr-muted);
+  font-size: 18px;
+  max-width: 760px;
+}
+
+.rr-hero {
+  min-height: 760px;
+  color: #ffffff;
+  background:
+    linear-gradient(90deg, rgba(7, 22, 38, 0.86), rgba(7, 22, 38, 0.58), rgba(7, 22, 38, 0.22)),
+    var(--hero-image, url("../img/gallary/day_hotel_view.jpeg")) center/cover no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.rr-hero-inner {
+  padding: 110px 0 80px;
+}
+
+.rr-hero h1 {
+  max-width: 780px;
+  margin: 14px 0 18px;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 7vw, 88px);
+  line-height: 0.98;
+}
+
+.rr-hero p {
+  max-width: 680px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 19px;
+}
+
+.rr-hero-badges,
+.rr-stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.rr-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 999px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.rr-booking-panel {
+  margin-top: -72px;
+  position: relative;
+  z-index: 5;
+}
+
+.rr-panel,
+.rr-card {
+  background: #ffffff;
+  border: 1px solid rgba(16, 38, 61, 0.08);
+  border-radius: 8px;
+  box-shadow: var(--rr-shadow);
+}
+
+.rr-panel {
+  padding: 24px;
+}
+
+.rr-form-label {
+  color: var(--rr-navy);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rr-input,
+.rr-select,
+.rr-textarea {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--rr-line);
+  border-radius: 6px;
+  color: var(--rr-ink);
+  background: #ffffff;
+  padding: 11px 13px;
+}
+
+.rr-textarea {
+  min-height: 140px;
+}
+
+.rr-feature {
+  display: flex;
+  gap: 16px;
+}
+
+.rr-icon {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: var(--rr-gold);
+  background: rgba(200, 154, 69, 0.12);
+}
+
+.rr-card {
+  height: 100%;
+  overflow: hidden;
+}
+
+.rr-card-body {
+  padding: 24px;
+}
+
+.rr-card img {
+  width: 100%;
+  height: 265px;
+  object-fit: cover;
+}
+
+.rr-card h3,
+.rr-card h4 {
+  color: var(--rr-navy);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.rr-price {
+  color: var(--rr-gold);
+  font-weight: 900;
+}
+
+.rr-split-image {
+  min-height: 520px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: var(--rr-shadow);
+}
+
+.rr-check-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.rr-check-list li {
+  display: flex;
+  gap: 10px;
+  color: var(--rr-muted);
+}
+
+.rr-check-list i {
+  color: var(--rr-gold);
+  margin-top: 6px;
+}
+
+.rr-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+
+.rr-gallery-item {
+  min-height: 240px;
+  grid-column: span 4;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  background: var(--rr-navy);
+}
+
+.rr-gallery-item.rr-wide {
+  grid-column: span 8;
+}
+
+.rr-gallery-item.rr-tall {
+  min-height: 500px;
+  grid-row: span 2;
+}
+
+.rr-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.rr-gallery-item:hover img {
+  transform: scale(1.04);
+}
+
+.rr-gallery-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 18px;
+  color: #ffffff;
+  background: linear-gradient(180deg, transparent, rgba(7, 22, 38, 0.82));
+  font-weight: 800;
+}
+
+.rr-banner {
+  min-height: 420px;
+  display: flex;
+  align-items: end;
+  color: #ffffff;
+  background:
+    linear-gradient(90deg, rgba(7, 22, 38, 0.84), rgba(7, 22, 38, 0.5)),
+    var(--banner-image, url("../img/gallary/location_view.jpeg")) center/cover no-repeat;
+}
+
+.rr-banner .container {
+  padding-top: 120px;
+  padding-bottom: 64px;
+}
+
+.rr-banner h1 {
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 6vw, 70px);
+  line-height: 1;
+}
+
+.rr-footer {
+  color: rgba(255, 255, 255, 0.78);
+  background: var(--rr-navy);
+  padding: 70px 0 24px;
+}
+
+.rr-footer h3,
+.rr-footer h4 {
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.rr-footer a {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.rr-footer-bottom {
+  margin-top: 42px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 14px;
+}
+
+.rr-map-card {
+  min-height: 360px;
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(16, 38, 61, 0.9), rgba(16, 38, 61, 0.55)),
+    url("../img/gallary/mountain_view.jpeg") center/cover no-repeat;
+  color: #ffffff;
+  padding: 34px;
+}
+
+.rr-testimonial {
+  min-height: 100%;
+  padding: 28px;
+}
+
+.rr-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rr-table th,
+.rr-table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--rr-line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.rr-table th {
+  color: var(--rr-navy);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rr-faq details {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--rr-line);
+}
+
+.rr-faq summary {
+  color: var(--rr-navy);
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.rr-faq p {
+  margin: 12px 0 0;
+  color: var(--rr-muted);
+}
+
+.rr-article {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.rr-article h2 {
+  margin-top: 36px;
+  color: var(--rr-navy);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.rr-article p,
+.rr-article li {
+  color: var(--rr-muted);
+}
+
+.rr-whatsapp-chat {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+.rr-whatsapp-float {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 132px;
+  height: 56px;
+  border: 0;
+  border-radius: 999px;
+  color: #ffffff;
+  background: #25d366;
+  box-shadow: 0 18px 36px rgba(37, 211, 102, 0.34);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rr-whatsapp-float i {
+  font-size: 24px;
+}
+
+.rr-whatsapp-float:hover,
+.rr-whatsapp-float:focus {
+  outline: 0;
+  transform: translateY(-2px);
+  box-shadow: 0 22px 44px rgba(37, 211, 102, 0.44);
+}
+
+.rr-whatsapp-card {
+  width: min(360px, calc(100vw - 32px));
+  overflow: hidden;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 22px 70px rgba(16, 38, 61, 0.24);
+  opacity: 0;
+  transform: translateY(16px) scale(0.98);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.rr-whatsapp-chat.is-open .rr-whatsapp-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.rr-whatsapp-card__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+  background:
+    linear-gradient(135deg, rgba(16, 38, 61, 0.94), rgba(23, 54, 82, 0.92)),
+    url("../img/gallary/location_view.jpeg") center/cover no-repeat;
+  padding: 18px;
+}
+
+.rr-whatsapp-card__header strong,
+.rr-whatsapp-card__header span {
+  display: block;
+}
+
+.rr-whatsapp-card__header span {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 13px;
+}
+
+.rr-whatsapp-avatar {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #25d366;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.rr-whatsapp-close {
+  width: 34px;
+  height: 34px;
+  margin-left: auto;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.rr-whatsapp-card__body {
+  padding: 18px;
+  background:
+    linear-gradient(180deg, rgba(247, 248, 246, 0.72), rgba(255, 255, 255, 1));
+}
+
+.rr-chat-bubble {
+  margin: 0 0 14px;
+  padding: 13px 14px;
+  border-radius: 8px 8px 8px 2px;
+  color: var(--rr-ink);
+  background: #eef3ef;
+  font-size: 14px;
+}
+
+.rr-whatsapp-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 50px;
+  margin-top: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--rr-line);
+  border-radius: 8px;
+  color: var(--rr-navy);
+  background: #ffffff;
+  font-weight: 800;
+}
+
+.rr-whatsapp-option i {
+  width: 28px;
+  color: #25d366;
+  text-align: center;
+}
+
+.rr-whatsapp-option:hover {
+  color: var(--rr-navy);
+  border-color: rgba(37, 211, 102, 0.42);
+  background: rgba(37, 211, 102, 0.07);
+}
+
+@media (max-width: 991px) {
+  .rr-topbar .rr-hide-mobile {
+    display: none;
+  }
+
+  .rr-hero {
+    min-height: 680px;
+  }
+
+  .rr-booking-panel {
+    margin-top: 0;
+  }
+
+  .rr-gallery-item,
+  .rr-gallery-item.rr-wide {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 767px) {
+  .rr-section {
+    padding: 58px 0;
+  }
+
+  .rr-logo {
+    width: 122px;
+  }
+
+  .rr-hero {
+    min-height: 640px;
+  }
+
+  .rr-hero-inner {
+    padding: 72px 0 56px;
+  }
+
+  .rr-panel {
+    padding: 18px;
+  }
+
+  .rr-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rr-gallery-item,
+  .rr-gallery-item.rr-wide,
+  .rr-gallery-item.rr-tall {
+    grid-column: 1;
+    min-height: 270px;
+  }
+
+  .rr-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .rr-whatsapp-chat {
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .rr-whatsapp-float {
+    min-width: 58px;
+    width: 58px;
+  }
+
+  .rr-whatsapp-float span {
+    display: none;
+  }
+}
