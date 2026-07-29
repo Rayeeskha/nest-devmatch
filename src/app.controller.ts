@@ -4,13 +4,13 @@ import { Controller, Get, Render } from '@nestjs/common';
 export class AppController {
   private pageData(overrides: Record<string, unknown> = {}) {
     return {
-      title: 'Riverside Royale Kargil | Riverside Hotel in Ladakh',
+      title: 'Riverside Royale | Hotel in Kargil on the Kashmir to Ladakh Route',
       description:
-        'Riverside Royale is a hotel in Kargil, Ladakh on NH 1, Andoo Road with mountain views, comfortable rooms, cafe dining, parking, and direct booking support.',
+        'Riverside Royale is a hotel in Kargil, Ladakh on NH 1, Andoo Road with comfortable rooms, cafe dining, parking, mountain views, and direct booking support.',
       keywords:
         'Riverside Royale, River Side Royale, hotel in Kargil, Kargil hotel, Ladakh hotel, NH 1 Kargil hotel, Andoo Road hotel',
       canonicalUrl: 'https://riversideroyale.com/',
-      ogTitle: 'Riverside Royale Kargil',
+      ogTitle: 'Riverside Royale Hotel in Kargil',
       ogDescription:
         'Stay elegant, stay royale at Riverside Royale, a riverside hotel in Kargil, Ladakh.',
       ogImage: '/assets/gallary/day_hotel_view.jpeg',
@@ -20,7 +20,7 @@ export class AppController {
     };
   }
 
-  @Get([''])
+  @Get(['', 'index'])
   @Render('index')
   index() {
     return this.pageData({
@@ -46,7 +46,7 @@ export class AppController {
       bannerKicker: 'About the hotel',
       bannerTitle: 'Riverside comfort in Kargil.',
       bannerLead:
-        'Use this page to add your hotel story, team details, facilities, and guest experience content.',
+        'A warm hotel stay on NH 1, Andoo Road for guests travelling through Kargil, Ladakh, and the Kashmir to Leh route.',
     });
   }
 
@@ -63,7 +63,7 @@ export class AppController {
       bannerKicker: 'Rooms and amenities',
       bannerTitle: 'Comfortable Kargil hotel rooms for every route',
       bannerLead:
-        'Use this page for room categories, prices, amenities, occupancy, policies, and booking notes.',
+        'Choose clean rooms, cafe dining, parking support, and direct booking help for your Kargil stay.',
     });
   }
 
@@ -78,9 +78,9 @@ export class AppController {
       showInnerBanner: true,
       bannerImage: '/assets/gallary/night_hotel_view.jpeg',
       bannerKicker: 'Photo gallery',
-      bannerTitle: 'Comfortable Kargil hotel rooms for every route',
+      bannerTitle: 'Riverside Royale rooms, cafe, and Kargil views',
       bannerLead:
-        'Use this page for room, cafe, exterior, mountain view, and guest area photos.',
+        'See real hotel photos before you book your stay in Kargil.',
     });
   }
 
@@ -88,42 +88,46 @@ export class AppController {
   @Render('blog')
   blog() {
     return this.pageData({
-      title: 'Kargil Hotel Blog | Riverside Royale Travel Guide',
+      title: 'Riverside Royale Blog | Hotel in Kargil and Kashmir to Ladakh Stay Guide',
       description:
-        'Read Riverside Royale hotel blogs for Kargil stays, NH 1 route access, rooms, cafe dining, parking, Ladakh road trips, and direct booking tips.',
+        'Read Riverside Royale travel guides for hotel stays in Kargil, Kashmir to Ladakh road trips, NH 1 access, rooms, cafe dining, parking, and direct booking tips.',
       keywords:
-        'Kargil hotel blog, Riverside Royale blog, hotel in Kargil guide, NH 1 Kargil stay, Ladakh hotel tips, Kargil travel guide',
+        'hotel in Kargil, hotel in Kashmir route, Riverside Royale, Kargil hotel, Kashmir to Ladakh hotel, hotel near NH 1 Kargil, Ladakh hotel guide',
       canonicalUrl: 'https://riversideroyale.com/blog',
-      ogTitle: 'Kargil Hotel Blog by Riverside Royale',
+      ogTitle: 'Riverside Royale Blog | Hotel in Kargil Guide',
       ogDescription:
-        'SEO-friendly local travel tips for guests staying at Riverside Royale in Kargil, Ladakh.',
+        'Local hotel and travel tips for guests planning a Kargil stay on the Kashmir to Ladakh route.',
       ogImage: '/assets/gallary/mountain_cloud.jpeg',
       ogUrl: 'https://riversideroyale.com/blog',
       schemaBlog: true,
       isBlog: true,
       showInnerBanner: true,
       bannerImage: '/assets/gallary/mountain_cloud.jpeg',
-      bannerKicker: 'Kargil hotel blog',
-      bannerTitle: 'Travel smarter through Kargil, Ladakh.',
+      bannerKicker: 'Riverside Royale blog',
+      bannerTitle: 'Hotel in Kargil and Kashmir to Ladakh travel guides.',
       bannerLead:
-        'Use this page for blog cards, Kargil travel tips, NH 1 guidance, and hotel articles.',
+        'Helpful hotel guides for Kargil stays, Kashmir to Ladakh road trips, NH 1 access, rooms, cafe dining, parking, and direct booking.',
     });
   }
 
-  @Get(['blog-single'])
+  @Get(['hotel-in-kashmir', 'blog/hotel-in-kargil'])
   @Render('blog-single')
   blogSingle() {
     return this.pageData({
-      title: 'Kargil Stay Guide | Riverside Royale',
+      title: 'Hotel in Kargil Guide | Riverside Royale on the Kashmir to Ladakh Route',
+      description:
+        'Plan your stay at Riverside Royale, a hotel in Kargil with rooms, cafe dining, parking, mountain views, and direct booking support for Kashmir to Ladakh travelers.',
+      keywords:
+        'hotel in Kargil, best hotel in Kargil, hotel in Kashmir to Ladakh route, Kargil hotel with parking, Riverside Royale Kargil',
       canonicalUrl: 'https://riversideroyale.com/blog-single',
       ogUrl: 'https://riversideroyale.com/blog-single',
       isBlog: true,
       showInnerBanner: true,
       bannerImage: '/assets/gallary/location_view.jpeg',
       bannerKicker: 'Featured guide',
-      bannerTitle: 'Travel smarter through Kargil, Ladakh.',
+      bannerTitle: 'Hotel in Kargil guide by Riverside Royale.',
       bannerLead:
-        'Use this page for the full blog article body, table of contents, FAQs, and booking CTA.',
+        'A practical guide for choosing a Kargil hotel while travelling from Kashmir to Ladakh, Srinagar to Leh, or Zanskar routes.',
     });
   }
 
@@ -140,7 +144,7 @@ export class AppController {
       bannerKicker: 'Contact and booking',
       bannerTitle: 'Book direct with Riverside Royale Kargil.',
       bannerLead:
-        'Use this page for phone, WhatsApp, address, map, enquiry form, and arrival instructions.',
+        'Call or WhatsApp Riverside Royale for room availability, meal timing, parking, directions, and booking support.',
     });
   }
 }

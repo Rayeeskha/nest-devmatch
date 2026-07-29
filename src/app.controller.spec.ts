@@ -20,7 +20,8 @@ describe('AppController', () => {
         expect.objectContaining({
           isHome: true,
           showHomeHero: true,
-          title: 'Riverside Royale Kargil | Riverside Hotel in Ladakh',
+          title:
+            'Riverside Royale | Hotel in Kargil on the Kashmir to Ladakh Route',
         }),
       );
     });
