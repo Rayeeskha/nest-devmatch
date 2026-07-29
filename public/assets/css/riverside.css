@@ -173,7 +173,7 @@ img {
   color: #ffffff;
   background:
     linear-gradient(90deg, rgba(7, 22, 38, 0.86), rgba(7, 22, 38, 0.58), rgba(7, 22, 38, 0.22)),
-    var(--hero-image, url("../img/gallary/day_hotel_view.jpeg")) center/cover no-repeat;
+    url("../gallary/day_hotel_view.jpeg") center/cover no-repeat;
   display: flex;
   align-items: center;
 }
@@ -378,7 +378,7 @@ img {
   color: #ffffff;
   background:
     linear-gradient(90deg, rgba(7, 22, 38, 0.84), rgba(7, 22, 38, 0.5)),
-    var(--banner-image, url("../img/gallary/location_view.jpeg")) center/cover no-repeat;
+    var(--banner-image, url("../gallary/location_view.jpeg")) center/cover no-repeat;
 }
 
 .rr-banner .container {
@@ -391,6 +391,13 @@ img {
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(38px, 6vw, 70px);
   line-height: 1;
+}
+
+.rr-banner-lead {
+  max-width: 720px;
+  margin: 16px 0 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 19px;
 }
 
 .rr-footer {
@@ -421,9 +428,338 @@ img {
   border-radius: 8px;
   background:
     linear-gradient(135deg, rgba(16, 38, 61, 0.9), rgba(16, 38, 61, 0.55)),
-    url("../img/gallary/mountain_view.jpeg") center/cover no-repeat;
+    url("../gallary/mountain_view.jpeg") center/cover no-repeat;
   color: #ffffff;
   padding: 34px;
+}
+
+.rr-contact-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 30px;
+  border-radius: 8px;
+  color: #ffffff;
+  background:
+    linear-gradient(150deg, rgba(16, 38, 61, 0.96), rgba(23, 54, 82, 0.86)),
+    url("../gallary/night_hotel_view.jpeg") center/cover no-repeat;
+  box-shadow: var(--rr-shadow);
+}
+
+.rr-contact-panel h2 {
+  margin: 10px 0 16px;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.06;
+}
+
+.rr-contact-panel p,
+.rr-contact-list span,
+.rr-contact-list a {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.rr-contact-actions,
+.rr-article-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 22px 0;
+}
+
+.rr-btn-light {
+  border-color: rgba(255, 255, 255, 0.46);
+  color: #ffffff;
+}
+
+.rr-btn-light:hover {
+  color: #ffffff;
+}
+
+.rr-contact-list {
+  display: grid;
+  gap: 14px;
+  margin: 8px 0 24px;
+}
+
+.rr-contact-list div {
+  display: flex;
+  gap: 12px;
+}
+
+.rr-contact-list i {
+  width: 22px;
+  margin-top: 5px;
+  color: var(--rr-gold-2);
+  text-align: center;
+}
+
+.rr-contact-slider {
+  margin-top: auto;
+}
+
+.rr-contact-slide {
+  position: relative;
+  overflow: hidden;
+  min-height: 240px;
+  border-radius: 8px;
+}
+
+.rr-contact-slide img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.rr-contact-slide span {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: rgba(7, 22, 38, 0.74);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.rr-booking-card .rr-lead {
+  max-width: 100%;
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+
+.rr-map-embed {
+  min-height: 480px;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid rgba(16, 38, 61, 0.08);
+  background: #ffffff;
+  box-shadow: var(--rr-shadow);
+}
+
+.rr-map-embed iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  display: block;
+}
+
+.rr-blog-slider .owl-stage {
+  display: flex;
+}
+
+.rr-blog-slider .owl-item {
+  display: flex;
+}
+
+.rr-blog-slide {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid rgba(16, 38, 61, 0.08);
+  background: #ffffff;
+  box-shadow: var(--rr-shadow);
+}
+
+.rr-blog-slide__image {
+  display: block;
+  height: 285px;
+  overflow: hidden;
+}
+
+.rr-blog-slide__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.rr-blog-slide:hover .rr-blog-slide__image img {
+  transform: scale(1.04);
+}
+
+.rr-blog-slide__body {
+  padding: 24px;
+}
+
+.rr-blog-slide h3,
+.rr-blog-feature h2,
+.rr-cta-band h2,
+.rr-article-cta h2,
+.rr-side-cta h3 {
+  color: var(--rr-navy);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.rr-blog-slide h3 {
+  min-height: 84px;
+  margin: 10px 0 12px;
+  font-size: 28px;
+  line-height: 1.08;
+}
+
+.rr-blog-slide p {
+  min-height: 78px;
+  color: var(--rr-muted);
+}
+
+.rr-blog-slider .owl-dots,
+.rr-contact-slider .owl-dots {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.rr-blog-slider .owl-dot,
+.rr-contact-slider .owl-dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background: rgba(16, 38, 61, 0.2) !important;
+}
+
+.rr-contact-slider .owl-dot {
+  background: rgba(255, 255, 255, 0.36) !important;
+}
+
+.rr-blog-slider .owl-dot.active,
+.rr-contact-slider .owl-dot.active {
+  background: var(--rr-gold) !important;
+}
+
+.rr-blog-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+  align-items: stretch;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: var(--rr-shadow);
+}
+
+.rr-blog-feature__image img {
+  width: 100%;
+  height: 100%;
+  min-height: 460px;
+  object-fit: cover;
+}
+
+.rr-blog-feature__content {
+  padding: clamp(28px, 4vw, 52px);
+}
+
+.rr-blog-feature h2 {
+  margin: 12px 0 16px;
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.02;
+}
+
+.rr-blog-feature p,
+.rr-cta-band p,
+.rr-article-cta p,
+.rr-side-cta p {
+  color: var(--rr-muted);
+}
+
+.rr-blog-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 18px 0 24px;
+  color: var(--rr-muted);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.rr-blog-meta i {
+  color: var(--rr-gold);
+  margin-right: 6px;
+}
+
+.rr-blog-card .rr-card-body {
+  min-height: 282px;
+}
+
+.rr-blog-card h3 {
+  font-size: 27px;
+  line-height: 1.12;
+}
+
+.rr-cta-band {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: clamp(28px, 5vw, 50px);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(247, 248, 246, 0.98)),
+    url("../gallary/mountain_view.jpeg") center/cover no-repeat;
+  box-shadow: var(--rr-shadow);
+}
+
+.rr-cta-band h2 {
+  margin: 8px 0 10px;
+  font-size: clamp(30px, 4vw, 48px);
+}
+
+.rr-article-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 860px);
+  gap: 34px;
+  align-items: start;
+  justify-content: center;
+}
+
+.rr-article-aside {
+  position: sticky;
+  top: 108px;
+  display: grid;
+  gap: 18px;
+}
+
+.rr-toc {
+  display: grid;
+  gap: 10px;
+}
+
+.rr-toc a {
+  color: var(--rr-muted);
+  font-weight: 800;
+}
+
+.rr-toc a:hover {
+  color: var(--rr-gold);
+}
+
+.rr-side-cta h3 {
+  font-size: 28px;
+  line-height: 1.08;
+}
+
+.rr-article-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  margin-top: 46px;
+  padding: 30px;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: var(--rr-shadow);
+}
+
+.rr-btn-muted {
+  border-color: var(--rr-line);
+  color: var(--rr-navy);
+  background: #ffffff;
+}
+
+.rr-btn-muted:hover {
+  color: var(--rr-navy);
+  background: #f3f5f6;
 }
 
 .rr-testimonial {
@@ -547,7 +883,7 @@ img {
   color: #ffffff;
   background:
     linear-gradient(135deg, rgba(16, 38, 61, 0.94), rgba(23, 54, 82, 0.92)),
-    url("../img/gallary/location_view.jpeg") center/cover no-repeat;
+    url("../gallary/location_view.jpeg") center/cover no-repeat;
   padding: 18px;
 }
 
@@ -631,6 +967,17 @@ img {
     display: none;
   }
 
+  .rr-header .navbar-collapse.rr-nav-open {
+    display: block !important;
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  .rr-header .navbar-nav {
+    align-items: flex-start !important;
+    padding: 12px 0 4px;
+  }
+
   .rr-hero {
     min-height: 680px;
   }
@@ -642,6 +989,21 @@ img {
   .rr-gallery-item,
   .rr-gallery-item.rr-wide {
     grid-column: span 6;
+  }
+
+  .rr-blog-feature,
+  .rr-article-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .rr-article-aside {
+    position: static;
+  }
+
+  .rr-cta-band,
+  .rr-article-cta {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
 
@@ -664,6 +1026,32 @@ img {
 
   .rr-panel {
     padding: 18px;
+  }
+
+  .rr-contact-panel {
+    padding: 22px;
+  }
+
+  .rr-blog-slide h3 {
+    min-height: auto;
+    font-size: 25px;
+  }
+
+  .rr-blog-slide p {
+    min-height: auto;
+  }
+
+  .rr-blog-feature__image img {
+    min-height: 310px;
+  }
+
+  .rr-blog-card .rr-card-body {
+    min-height: auto;
+  }
+
+  .rr-map-embed,
+  .rr-map-embed iframe {
+    min-height: 360px;
   }
 
   .rr-gallery-grid {

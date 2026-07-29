@@ -3,9 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{title}}</title>
+    <meta name="description" content="{{description}}">
+    <meta name="keywords" content="{{keywords}}">
+    <link rel="canonical" href="{{canonicalUrl}}">
+    <meta property="og:title" content="{{ogTitle}}">
+    <meta property="og:description" content="{{ogDescription}}">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="{{ogImage}}">
+    <meta property="og:url" content="{{ogUrl}}">
+    <link rel="icon" href="{{favicon}}" type="image/png">
+    <link rel="stylesheet" href="/assets/vendors/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/vendors/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/assets/vendors/magnefic-popup/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/vendors/owl-carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/assets/css/riverside.css?v=3">
+    {{#if schemaHotel}}
+        {{> hotelSchema}}
+    {{/if}}
+    {{#if schemaBlog}}
+        {{> blogSchema}}
+    {{/if}}
 </head>
 <body>
+    {{> topbar}}
+    {{> header}}
+    {{#if showHomeHero}}
+        {{> homeHero}}
+    {{/if}}
+    {{#if showInnerBanner}}
+        {{> banner}}
+    {{/if}}
     {{{body}}}
+    {{> footer}}
+    {{> scripts}}
 </body>
 </html>

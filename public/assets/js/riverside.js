@@ -1,0 +1,115 @@
+(function () {
+    function ready(callback) {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', callback);
+            return;
+        }
+
+        callback();
+    }
+
+    ready(function () {
+        var navToggle = document.querySelector('[data-rr-nav-toggle]');
+        var nav = document.getElementById('rrNav');
+        var whatsappToggle = document.querySelector('[data-whatsapp-toggle]');
+        var whatsappCard = document.getElementById('rrWhatsAppCard');
+        var whatsappChat = document.querySelector('.rr-whatsapp-chat');
+        var whatsappClose = document.querySelector('[data-whatsapp-close]');
+
+        function closeNav() {
+            if (!nav || !navToggle) {
+                return;
+            }
+
+            nav.classList.remove('show', 'rr-nav-open');
+            navToggle.setAttribute('aria-expanded', 'false');
+        }
+
+        if (navToggle && nav) {
+            navToggle.addEventListener('click', function () {
+                var isOpen = nav.classList.contains('rr-nav-open');
+
+                nav.classList.toggle('show', !isOpen);
+                nav.classList.toggle('rr-nav-open', !isOpen);
+                navToggle.setAttribute('aria-expanded', String(!isOpen));
+            });
+        }
+
+        document.querySelectorAll('.navbar-nav a').forEach(function (link) {
+            link.addEventListener('click', closeNav);
+        });
+
+        function setWhatsappOpen(isOpen) {
+            if (!whatsappChat || !whatsappToggle || !whatsappCard) {
+                return;
+            }
+
+            whatsappChat.classList.toggle('is-open', isOpen);
+            whatsappToggle.setAttribute('aria-expanded', String(isOpen));
+            whatsappCard.setAttribute('aria-hidden', String(!isOpen));
+        }
+
+        if (whatsappToggle) {
+            whatsappToggle.addEventListener('click', function () {
+                setWhatsappOpen(!whatsappChat.classList.contains('is-open'));
+            });
+        }
+
+        if (whatsappClose) {
+            whatsappClose.addEventListener('click', function () {
+                setWhatsappOpen(false);
+            });
+        }
+
+        document.addEventListener('keyup', function (event) {
+            if (event.key === 'Escape') {
+                closeNav();
+                setWhatsappOpen(false);
+            }
+        });
+    });
+})();
+
+if (window.jQuery) {
+    jQuery(function ($) {
+        if ($.fn.owlCarousel) {
+        $('.rr-blog-slider').owlCarousel({
+            dots: true,
+            loop: true,
+            margin: 24,
+            nav: false,
+            responsive: {
+                0: { items: 1 },
+                768: { items: 2 },
+                1200: { items: 3 }
+            }
+        });
+
+        $('.rr-contact-slider').owlCarousel({
+            dots: true,
+            items: 1,
+            loop: true,
+            nav: false
+        });
+    }
+
+    $('.js-whatsapp-form').on('submit', function (event) {
+        event.preventDefault();
+
+        var $form = $(this);
+        var phone = $form.data('phone');
+        var message = ['Hello Riverside Royale, I want to check room availability.'];
+
+        $form.find('[data-label]').each(function () {
+            var label = $(this).data('label');
+            var value = $(this).val();
+
+            if (value) {
+                message.push(label + ': ' + value);
+            }
+        });
+
+        window.open('https://wa.me/' + phone + '?text=' + encodeURIComponent(message.join('\n')), '_blank');
+    });
+    });
+}

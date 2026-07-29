@@ -15,8 +15,14 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+    it('should return index page data', () => {
+      expect(appController.index()).toEqual(
+        expect.objectContaining({
+          isHome: true,
+          showHomeHero: true,
+          title: 'Riverside Royale Kargil | Riverside Hotel in Ladakh',
+        }),
+      );
     });
   });
 });
