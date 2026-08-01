@@ -897,7 +897,7 @@ img {
   font-size: 13px;
 }
 
-.rr-whatsapp-avatar {
+.rr-whatsapp-card__header .rr-whatsapp-avatar {
   width: 44px;
   height: 44px;
   flex: 0 0 44px;
@@ -908,6 +908,11 @@ img {
   background: #25d366;
   color: #ffffff;
   font-size: 24px;
+}
+
+.rr-whatsapp-avatar i {
+  display: block;
+  line-height: 1;
 }
 
 .rr-whatsapp-close {
