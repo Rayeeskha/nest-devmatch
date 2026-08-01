@@ -61,24 +61,48 @@
             });
         }
 
+        function buildWhatsappUrl(form) {
+            var phone = form.getAttribute('data-phone');
+            var message = ['Hello Riverside Royale, I want to check room availability.'];
+
+            form.querySelectorAll('[data-label]').forEach(function (field) {
+                var label = field.getAttribute('data-label');
+                var value = field.value;
+
+                if (value) {
+                    message.push(label + ': ' + value);
+                }
+            });
+
+            if (!phone) {
+                return '';
+            }
+
+            return 'https://wa.me/' + phone + '?text=' + encodeURIComponent(message.join('\n'));
+        }
+
+        function openWhatsappEnquiry(form) {
+            var url = buildWhatsappUrl(form);
+
+            if (url) {
+                window.location.href = url;
+            }
+        }
+
         document.querySelectorAll('.js-whatsapp-form').forEach(function (form) {
             form.addEventListener('submit', function (event) {
                 event.preventDefault();
+                openWhatsappEnquiry(form);
+            });
+        });
 
-                var phone = form.getAttribute('data-phone');
-                var message = ['Hello Riverside Royale, I want to check room availability.'];
+        document.querySelectorAll('[data-whatsapp-submit]').forEach(function (button) {
+            button.addEventListener('click', function (event) {
+                var form = button.closest('.js-whatsapp-form');
 
-                form.querySelectorAll('[data-label]').forEach(function (field) {
-                    var label = field.getAttribute('data-label');
-                    var value = field.value;
-
-                    if (value) {
-                        message.push(label + ': ' + value);
-                    }
-                });
-
-                if (phone) {
-                    window.open('https://wa.me/' + phone + '?text=' + encodeURIComponent(message.join('\n')), '_blank', 'noopener');
+                if (form) {
+                    event.preventDefault();
+                    openWhatsappEnquiry(form);
                 }
             });
         });

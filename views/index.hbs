@@ -1,7 +1,7 @@
 <main>
     <section class="rr-booking-panel">
         <div class="container">
-            <form class="rr-panel js-whatsapp-form" data-phone="{{contact.whatsapp.number}}">
+            <form class="rr-panel js-whatsapp-form" action="{{contact.whatsapp.checkAvailability}}" data-phone="{{contact.whatsapp.number}}">
                 <div class="row align-items-end">
                     <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
                         <label class="rr-form-label" for="arrival">Arrival</label>
@@ -29,7 +29,7 @@
                         </select>
                     </div>
                     <div class="col-lg-2">
-                        <button class="rr-btn w-100" type="submit">Enquire</button>
+                        <a class="rr-btn w-100" href="{{contact.whatsapp.checkAvailability}}" data-whatsapp-submit>Enquire</a>
                     </div>
                 </div>
             </form>
