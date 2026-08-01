@@ -29,7 +29,7 @@
                         </select>
                     </div>
                     <div class="col-lg-2">
-                        <a class="rr-btn w-100" href="{{contact.whatsapp.checkAvailability}}" data-whatsapp-submit>Enquire</a>
+                        <button class="rr-btn w-100" type="button" data-whatsapp-submit data-whatsapp-fallback="{{contact.whatsapp.checkAvailability}}" onclick="if (!this.dataset.whatsappEnhanced) window.location.href = this.dataset.whatsappFallback;">Enquire</button>
                     </div>
                 </div>
             </form>

@@ -111,7 +111,15 @@ img {
   border-radius: 6px;
   font-weight: 800;
   line-height: 1;
+  cursor: pointer;
+  pointer-events: auto;
+  user-select: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+button.rr-btn,
+button.rr-btn-outline {
+  font-family: inherit;
 }
 
 .rr-btn {
@@ -251,6 +259,24 @@ img {
   color: var(--rr-ink);
   background: #ffffff;
   padding: 11px 13px;
+}
+
+.rr-input,
+.rr-select,
+.rr-textarea,
+.navbar-toggler,
+.rr-whatsapp-float,
+.rr-whatsapp-close,
+.rr-whatsapp-option {
+  pointer-events: auto;
+}
+
+.rr-select,
+.navbar-toggler,
+.rr-whatsapp-float,
+.rr-whatsapp-close,
+.rr-whatsapp-option {
+  cursor: pointer;
 }
 
 .rr-textarea {

@@ -97,12 +97,19 @@
         });
 
         document.querySelectorAll('[data-whatsapp-submit]').forEach(function (button) {
+            button.dataset.whatsappEnhanced = 'true';
+
             button.addEventListener('click', function (event) {
                 var form = button.closest('.js-whatsapp-form');
 
                 if (form) {
                     event.preventDefault();
                     openWhatsappEnquiry(form);
+                    return;
+                }
+
+                if (button.dataset.whatsappFallback) {
+                    window.location.href = button.dataset.whatsappFallback;
                 }
             });
         });
