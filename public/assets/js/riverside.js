@@ -61,6 +61,28 @@
             });
         }
 
+        document.querySelectorAll('.js-whatsapp-form').forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                var phone = form.getAttribute('data-phone');
+                var message = ['Hello Riverside Royale, I want to check room availability.'];
+
+                form.querySelectorAll('[data-label]').forEach(function (field) {
+                    var label = field.getAttribute('data-label');
+                    var value = field.value;
+
+                    if (value) {
+                        message.push(label + ': ' + value);
+                    }
+                });
+
+                if (phone) {
+                    window.open('https://wa.me/' + phone + '?text=' + encodeURIComponent(message.join('\n')), '_blank', 'noopener');
+                }
+            });
+        });
+
         document.addEventListener('keyup', function (event) {
             if (event.key === 'Escape') {
                 closeNav();
@@ -93,23 +115,5 @@ if (window.jQuery) {
         });
     }
 
-    $('.js-whatsapp-form').on('submit', function (event) {
-        event.preventDefault();
-
-        var $form = $(this);
-        var phone = $form.data('phone');
-        var message = ['Hello Riverside Royale, I want to check room availability.'];
-
-        $form.find('[data-label]').each(function () {
-            var label = $(this).data('label');
-            var value = $(this).val();
-
-            if (value) {
-                message.push(label + ': ' + value);
-            }
-        });
-
-        window.open('https://wa.me/' + phone + '?text=' + encodeURIComponent(message.join('\n')), '_blank');
-    });
     });
 }
