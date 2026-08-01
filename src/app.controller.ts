@@ -1,4 +1,5 @@
 import { Controller, Get, Render } from '@nestjs/common';
+import { getContactConfig } from './config/contact.config';
 
 @Controller()
 export class AppController {
@@ -16,6 +17,7 @@ export class AppController {
       ogImage: '/assets/gallary/day_hotel_view.jpeg',
       ogUrl: 'https://riversideroyale.com/',
       favicon: '/assets/logo/logo3.png',
+      contact: getContactConfig(),
       ...overrides,
     };
   }

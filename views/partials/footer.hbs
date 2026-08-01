@@ -12,15 +12,15 @@
     </div>
     <div class="rr-whatsapp-card__body">
     <p class="rr-chat-bubble">Hello, welcome to Riverside Royale. How can we help with your Kargil stay?</p>
-    <a class="rr-whatsapp-option" href="https://wa.me/919469740901?text=Hello%20Riverside%20Royale%2C%20I%20want%20to%20check%20room%20availability." target="_blank" rel="noopener">
+    <a class="rr-whatsapp-option" href="{{contact.whatsapp.checkAvailability}}" target="_blank" rel="noopener">
         <i class="fas fa-calendar-check"></i>
         <span>Check room availability</span>
     </a>
-    <a class="rr-whatsapp-option" href="https://wa.me/919469740901?text=Hello%20Riverside%20Royale%2C%20please%20share%20your%20current%20room%20tariff." target="_blank" rel="noopener">
+    <a class="rr-whatsapp-option" href="{{contact.whatsapp.askTariff}}" target="_blank" rel="noopener">
         <i class="fas fa-rupee-sign"></i>
         <span>Ask room tariff</span>
     </a>
-    <a class="rr-whatsapp-option" href="https://wa.me/919469740901?text=Hello%20Riverside%20Royale%2C%20I%20need%20directions%20to%20NH%201%2C%20Andoo%20Road%2C%20Kargil." target="_blank" rel="noopener">
+    <a class="rr-whatsapp-option" href="{{contact.whatsapp.directions}}" target="_blank" rel="noopener">
         <i class="fas fa-location-arrow"></i>
         <span>Get directions help</span>
     </a>
@@ -49,11 +49,11 @@
     <div class="col-sm-6 col-lg-3 mb-4">
         <h4>Contact</h4>
         <p>NH 1, Andoo Road<br>Kargil, Ladakh 194103</p>
-        <p><a href="tel:+919469740901">+91 94697 40901</a><br><a href="tel:+919320666818">+91 93206 66818</a></p>
+        <p><a href="{{contact.primaryMobile.telHref}}">{{contact.primaryMobile.display}}</a><br><a href="{{contact.secondaryMobile.telHref}}">{{contact.secondaryMobile.display}}</a></p>
     </div>
     <div class="col-lg-2 mb-4">
         <h4>WhatsApp</h4>
-        <a class="rr-btn" href="https://wa.me/919469740901">Message Hotel</a>
+        <a class="rr-btn" href="{{contact.whatsapp.messageHotel}}">Message Hotel</a>
     </div>
     </div>
     <div class="rr-footer-bottom d-flex flex-wrap justify-content-between">

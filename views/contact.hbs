@@ -8,8 +8,8 @@
               <h2>Direct contact for rooms, food, and arrival timing.</h2>
               <p>For fast availability, call or send your travel dates on WhatsApp. The hotel team can help confirm room options, route timing, food needs, and directions.</p>
               <div class="rr-contact-actions">
-                <a class="rr-btn" href="tel:+919469740901"><i class="fas fa-phone-alt mr-2"></i>Call Hotel</a>
-                <a class="rr-btn-outline rr-btn-light" href="https://wa.me/919469740901?text=Hello%20Riverside%20Royale%2C%20I%20want%20to%20check%20room%20availability." target="_blank" rel="noopener"><i class="fab fa-whatsapp mr-2"></i>WhatsApp</a>
+                <a class="rr-btn" href="{{contact.primaryMobile.telHref}}"><i class="fas fa-phone-alt mr-2"></i>Call Hotel</a>
+                <a class="rr-btn-outline rr-btn-light" href="{{contact.whatsapp.checkAvailability}}" target="_blank" rel="noopener"><i class="fab fa-whatsapp mr-2"></i>WhatsApp</a>
               </div>
               <div class="rr-contact-list">
                 <div>
@@ -18,7 +18,7 @@
                 </div>
                 <div>
                   <i class="fas fa-phone-alt"></i>
-                  <span><a href="tel:+919469740901">+91 94697 40901</a> / <a href="tel:+919320666818">+91 93206 66818</a></span>
+                  <span><a href="{{contact.primaryMobile.telHref}}">{{contact.primaryMobile.display}}</a> / <a href="{{contact.secondaryMobile.telHref}}">{{contact.secondaryMobile.display}}</a></span>
                 </div>
                 <div>
                   <i class="fas fa-road"></i>
@@ -46,7 +46,7 @@
               <span class="rr-kicker">Check availability</span>
               <h2 class="rr-title h1">Send a booking enquiry</h2>
               <p class="rr-lead">Share your travel dates and requirements. Your enquiry opens directly in WhatsApp for quicker hotel confirmation.</p>
-              <form class="js-whatsapp-form" data-phone="919469740901">
+              <form class="js-whatsapp-form" data-phone="{{contact.whatsapp.number}}">
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label class="rr-form-label" for="name">Name</label>
@@ -87,7 +87,7 @@
                   </div>
                   <div class="col-12">
                     <button class="rr-btn" type="submit"><i class="fab fa-whatsapp mr-2"></i>Send on WhatsApp</button>
-                    <a class="rr-btn-outline ml-md-3 mt-3 mt-md-0" style="color: var(--rr-navy); border-color: var(--rr-line);" href="tel:+919469740901">Call Hotel</a>
+                    <a class="rr-btn-outline ml-md-3 mt-3 mt-md-0" style="color: var(--rr-navy); border-color: var(--rr-line);" href="{{contact.primaryMobile.telHref}}">Call Hotel</a>
                   </div>
                 </div>
               </form>
